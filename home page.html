@@ -1,17 +1,28 @@
 <html>
 
 <head>
+    
     <style>
+        body {
+            background-color: #121212;
+        }
         button {
-            border-radius: 12px;
-            color: black;
+            border-radius: 10px;
+            color: white;
             padding: 10px 20px;
             text-align: center;
             margin-right: 3%;
+            border-color: aliceblue;
+            background-color: #121212;
         }
 
         button:hover {
             cursor: hand;
+            background-color: aliceblue;
+            color: black;
+            border-radius: 10px;
+            font-weight: bold;
+
         }
 
         .loginnsignup {
@@ -50,12 +61,12 @@
 
         .fade {
             animation-name: fade;
-            animation-duration: 1.5s;
+            animation-duration: 2s;
         }
 
         @keyframes fade {
             from {
-                opacity: .4
+                opacity: 1
             }
 
             to {
@@ -116,7 +127,7 @@
             }
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 2500); // Change image every 2 seconds
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
     </script>
 </body>
