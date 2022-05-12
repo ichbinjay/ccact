@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <meta http-equiv="refresh" content="2">
+    <title>Registration</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+
+        table {
+            margin-top: 10%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+        }
+
+        input:focus {
+            border: 1px solid #000;
+        }
+
+        select {
+            border-radius: 1px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            width: 100%;
+        }
+        .button{
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            width: 100%;
+            margin-left: auto;
+        }
+        .button:hover{
+            background-color: red;
+            border: none;
+        }
+    </style>
+    <script>
+        function getSize() {
+            return String(document.getElementById("firstname").style.width * 2);
+        }
+    </script>
+</head>
+
+<body>
+    <table cellpadding="10px">
+        <tr>
+            <td>
+                <input type="text" id="firstname" placeholder="First Name" required>
+            </td>
+            <td>
+                <input type="text" id="lastname" placeholder="Last Name" required>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="text" id="registrationumber" placeholder="Registration Number" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="password" id="password" placeholder="Password" required>
+            </td>
+            <td>
+                <input type="password" id="confirmpassword" placeholder="Confirm" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select id="year" required>
+                    <option value="">Year</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </td>
+            <td>
+                <select id="department" required>
+                    <option value="">Department</option>
+                    <option value="1">CSE</option>
+                    <option value="2">ECE</option>
+                    <option value="3">EEE</option>
+                    <option value="4">MECH</option>
+                    <option value="5">CIVIL</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <select id="clubname" required>
+                    <option value="">Club Name</option>
+                    <option value="1">Coding</option>
+                    <option value="2">Painting</option>
+                    <option value="3">Dancing</option>
+                    <option value="4">Singing</option>
+                    <option value="5">None</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" class="button" value="Register" onclick="register()">
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
