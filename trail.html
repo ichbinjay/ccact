@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <style>
+        button {
+            border-radius: 12px;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            margin-right: 3%;
+        }
+
+        button:hover {
+            cursor: hand;
+        }
+
+        .loginnsignup {
+            margin-top: 1.5%;
+            margin-left: 85%;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .slideshow-container {
+            margin: auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 75%;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 1px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 2.0s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="file:///E:/idp/logo-social.png" align="left" style="height: 50px;">
+    <div class="loginnsignup">
+        <button onclick="window.location.href='login.html'">Login</button>
+        <button onclick="window.location.href='signup.html'">Sign up</button>
+    </div>
+    <br>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img class="carousel" src="file:///E:/idp/painting.webp" alt-text="painting">
+        </div>
+        <div class="mySlides fade">
+            <img class="carousel" src="file:///E:/idp/singing.jpg" alt-text="singing">
+        </div>
+        <div class="mySlides fade">
+            <img class="carousel" src="file:///E:/idp/coding.jpg" alt-text="coding">
+        </div>
+        <div class="mySlides fade">
+            <img class="carousel" src="file:///E:/idp/literary.jpg" alt-text="literary">
+        </div>
+        <div class="mySlides fade">
+            <img class="carousel" src="file:///E:/idp/dancing.jpg" alt-text="dancing">
+        </div>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2500); // Change image every 2 seconds
+        }
+    </script>
+</body>
+
+</html>
