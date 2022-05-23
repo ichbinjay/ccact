@@ -4,13 +4,12 @@
     <meta http-equiv="refresh" content="2">
     <title>Registration</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto,wght@1,300&display=swap');
         body {
-            background-color: #f2f2f2;
+            background-color: #ffffff;
         }
-
-        table {
-            margin-top: 20%;
-            margin-left: 25%;
+        h1{
+            font-family: 'Roboto', sans-serif;
         }
 
         input {
@@ -50,13 +49,27 @@
             background-color: blue;
             border: none;
         }
+
+        #mainbox {
+            border: 2px solid hwb(0 75% 25%);
+            border-radius: 5%;
+            padding: 20px;
+            margin: 0 auto;
+            margin-top: 10%;
+            width: 50%;
+        }
     </style>
 </head>
 
 <body>
-    <div style="display: flex;">
-        <div style="width: 60%; float:left">
+    <div id="mainbox" style="display: flex;">
+        <div style="float: left;">
             <table cellpadding="10px">
+                <tr>
+                    <td colspan="2">
+                        <h1>Create your account</h1>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <input type="text" id="firstname" placeholder="First Name" required>
@@ -118,8 +131,8 @@
                 </tr>
             </table>
         </div>
-        <div style="width: 40%; float:right; margin-top: 5%">
-            <object data="account.svg" height="90%" width="90%" style="margin-left: auto;">
+        <div style="float: right;">
+            <object data="account.svg" height="90%" width="90%" style="margin-left: 15%;">
         </div>
     </div>
 </body>
