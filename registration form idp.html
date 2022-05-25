@@ -1,14 +1,16 @@
 <html>
 
 <head>
-    <meta http-equiv="refresh" content="2">
+
     <title>Registration</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto,wght@1,300&display=swap');
+
         body {
             background-color: #ffffff;
         }
-        h1{
+
+        h1 {
             font-family: 'Roboto', sans-serif;
         }
 
@@ -59,12 +61,46 @@
             width: 50%;
         }
     </style>
+
+    <script>
+        function validate() {
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirm_password = document.getElementById("confirm_password").value;
+
+            var nameregex = /^[a-zA-Z]+$/;
+            var passwordregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+            if (nameregex.matches(firstname) && nameregex.matches(lastname)) {
+                if (passwordregex.matches(password)) {
+                    if (password == confirm_password) {
+                        return true;
+                    }
+                    else {
+                        alert("Password does not match");
+                        return false;
+                    }
+                }
+                else {
+                    alert("Password must contain at least one uppercase letter, one lowercase letter, and one number");
+                    return false;
+                }
+            }
+            else {
+                alert("Name must contain only letters");
+                return false;
+            }
+        }
+    </script>
 </head>
 
 <body>
     <div id="mainbox" style="display: flex;">
         <div style="float: left;">
             <table cellpadding="10px">
+                <form name="RegistationForm" action="E:/IDP/fac-0.html" onsubmit="return validate()" method="post">
                 <tr>
                     <td colspan="2">
                         <h1>Create your account</h1>
@@ -126,9 +162,10 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" class="button" value="Register" onclick="register()">
+                        <input type="submit" class="button" value="Submit">
                     </td>
                 </tr>
+                </form>
             </table>
         </div>
         <div style="float: right;">
