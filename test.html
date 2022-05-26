@@ -1,59 +1,47 @@
 <html>
 
 <head>
-    <title>Club Data</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto,wght@1,300&display=swap');
+    <script>
+        function validate() {
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var password = document.getElementById("password").value;
+            var confirm_password = document.getElementById("confirm_password").value;
 
-        #mainbox {
-            border: 2px solid black;
-            width: 100%;
-            height: 100%;
-        }
-
-        #topribbon {
-            height: 10%;
-            width: 100%;
-            border: 1px solid black;
-        }
-
-        #sidepane {
-            height: 90%;
-            width: 15%;
-            float: left;
-            background-color: red;
-        }
-
-        #databox {
-            height: 90%;
-            width: 85%;
-            float: right;
-            background-color: orange;
-        }
-
-        #data {
-            height: auto;
-            width: auto;
-            border-collapse: collapse;
-            text-align: center;
-            margin-top: 15%;
-            border: 1px solid black;
+            nameregex = /^[a-zA-Z]+$/;
+            passwordregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+            if(firstname.match(nameregex) && lastname.match(nameregex)) {
+                if(password.match(passwordregex)) {
+                    if(password == confirm_password) {
+                        alert("Registration Successful");
+                        return true;
+                    }
+                    else {
+                        alert("Password does not match");
+                        return false;
+                    }
+                }
+                else {
+                    alert("Password must contain atleast one uppercase, one lowercase and one number");
+                    return false;
+                }
+            }else{
+                alert("Please fill all the fields correctly");
+                return false;
+            }
 
         }
-    </style>
+    </script>
 </head>
 
 <body>
-    <div>
-        <div id="topribbon">
-        </div>
-        <div id="sidepane">
-        </div>
-        <div id="databox">
-            <div id="data">
-            </div>
-        </div>
-    </div>
+    <form name="test" onsubmit="validate()" method="post">
+    <input type="text" id="firstname" placeholder="First Name"/>
+    <input type="text" id="lastname" placeholder="Last Name"/>
+    <input type="password" id="password" placeholder="Password"/>
+    <input type="password" id="confirm_password" placeholder="Confirm Password"/>
+    <input type="submit" name="submit" value="Submit"/>  
+    </form>
 </body>
 
 </html>

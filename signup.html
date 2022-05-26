@@ -67,30 +67,29 @@
         function validate() {
             var firstname = document.getElementById("firstname").value;
             var lastname = document.getElementById("lastname").value;
-            var email = document.getElementById("email").value;
             var password = document.getElementById("password").value;
             var confirm_password = document.getElementById("confirm_password").value;
 
             var nameregex = /^[a-zA-Z]+$/;
             var passwordregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-            if (nameregex.matches(firstname) && nameregex.matches(lastname)) {
-                if (passwordregex.matches(password)) {
-                    if (password == confirm_password) {
+            if(firstname.match(nameregex) && lastname.match(nameregex)) {
+                if(password.match(passwordregex)) {
+                    if(password == confirm_password) {
+                        alert("Registration Successful");
                         return true;
                     }
                     else {
-                        alert("Password does not match");
+                        alert("Passwords do not match");
                         return false;
                     }
                 }
                 else {
-                    alert("Password must contain at least one uppercase letter, one lowercase letter, and one number");
+                    alert("Password must contain atleast one uppercase, one lowercase, one number and atleast 8 characters");
                     return false;
                 }
-            }
-            else {
-                alert("Name must contain only letters");
+            }else{
+                alert("Please enter only alphabets in the name fields");
                 return false;
             }
         }
@@ -101,7 +100,7 @@
     <div id="mainbox" style="display: flex;">
         <div style="float: left;">
             <table cellpadding="10px">
-                <form name="RegistationForm" action="E:/IDP/fac-0.html" onsubmit="return validate()" method="post">
+                <form name="RegistationForm" onsubmit="validate()" method="post">
                     <tr>
                         <td colspan="2">
                             <h1>Create your account</h1>
@@ -125,7 +124,7 @@
                             <input type="password" id="password" placeholder="Password" required>
                         </td>
                         <td>
-                            <input type="password" id="confirmpassword" placeholder="Confirm" required>
+                            <input type="password" id="confirm_password" placeholder="Confirm" required>
                         </td>
                     </tr>
                     <tr>
@@ -163,7 +162,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="submit" class="button" value="Submit">
+                            <input type="submit" name="submit" class="button" value="Submit"/>
                         </td>
                     </tr>
                 </form>
