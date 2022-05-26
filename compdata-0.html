@@ -1,8 +1,7 @@
 <html>
 
 <head>
-    <!--<meta http-equiv="refresh" content="2">-->
-    <title>Faculty</title>
+    <title>Club Data</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto,wght@1,300&display=swap');
 
@@ -55,7 +54,7 @@
             background-color: white;
             font-family: 'Roboto', sans-serif;
         }
-        #regno{
+        select{
             color: black;
             padding: 10px 20px;
             text-align: left;
@@ -101,8 +100,24 @@
         </div>
         <div id="databox">
             <div id="data">
-                <input type="text" id="regno" placeholder="Registration Number..." />
+                <select id="clubname" required>
+                    <option value="">Select Club</option>
+                    <option value="1">Coding</option>
+                    <option value="2">Painting</option>
+                    <option value="3">Dancing</option>
+                    <option value="4">Singing</option>
+                    <option value="5">None</option>
+                </select>
                 <br> <br>
+                    <select id="compname" required>
+                        <option value="">Select Competition</option>
+                        <option value="1">Competition 1</option>
+                        <option value="2">Competition 2</option>
+                        <option value="3">Competition 3</option>
+                        <option value="4">Competition 4</option>
+                        <option value="5">Competition 5</option>
+                    </select>
+                    <br> <br>
                 <input type="submit" id="submit" value="Submit" />
             </div>
 
