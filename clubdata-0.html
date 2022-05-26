@@ -18,7 +18,7 @@
         }
 
         #sidepane {
-            height: 89%;
+            height: 90%;
             width: 15%;
             float: left;
         }
@@ -32,19 +32,26 @@
         }
 
         #databox {
-            height: 100%;
-            width: 100%;
-            border-collapse: collapse;
+            height: 90%;
+            width: 85%;
+            float: right;
+        }
+
+        #dataframe {
+            height: 50%;
+            width: 50%;
             text-align: center;
+            margin: auto;
+            margin-top: 15%;
+            background-color: blue;
+
         }
 
         #data {
-            height: auto;
-            width: auto;
-            border-collapse: collapse;
-            text-align: center;
-            margin-top: 15%;
-            border: 2px solid black;
+            margin: auto;
+            margin-top: 30%;
+            margin-bottom: 10%;
+            background-color: red;
 
         }
 
@@ -105,19 +112,20 @@
             </table>
         </div>
         <div id="databox">
-            <div id="data">
-                <select id="clubname" required>
-                    <option value="">Club Name</option>
-                    <option value="1">Coding</option>
-                    <option value="2">Painting</option>
-                    <option value="3">Dancing</option>
-                    <option value="4">Singing</option>
-                    <option value="5">None</option>
-                </select>
-                <br> <br>
-                <input type="submit" id="submit" value="Submit" />
+            <div id="dataframe">
+                <div id="data">
+                    <select id="clubname" required>
+                        <option value="">Club Name</option>
+                        <option value="1">Coding</option>
+                        <option value="2">Painting</option>
+                        <option value="3">Dancing</option>
+                        <option value="4">Singing</option>
+                        <option value="5">None</option>
+                    </select>
+                    <br> <br>
+                    <input type="submit" id="submit" value="Submit" />
+                </div>
             </div>
-
         </div>
     </div>
 </body>
