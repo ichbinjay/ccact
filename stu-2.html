@@ -7,7 +7,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto,wght@1,300&display=swap');
 
         div {
-            border: 2px solid black;
+            font-family: 'Roboto', sans-serif;
         }
 
         #mainbox {
@@ -33,7 +33,6 @@
             width: 100%;
             border-collapse: collapse;
             text-align: center;
-            font-family: 'Roboto', sans-serif;
         }
 
         #databox {
@@ -42,23 +41,19 @@
             float: right;
         }
 
-        #entryForm {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        #EntryTable {
+            border: 2px solid black;
+            width: 50%;
             height: 95%;
-            width: 90%;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 2%;
+            text-align: center;
+            font-size: 1.5em;
         }
-        #t1{
-            padding: 10px;
-            margin: 10px;
-            border: 2px solid black;
-            width: 100%;
-            height: 100%;
-            word-spacing: 2%;
-            margin-left: auto;
+        td > input[type=text], td > input[type=date], td > input[type=file] {
+            height: 25%;
+            width: 80%;
         }
 
         #logout {
@@ -95,51 +90,47 @@
             </table>
         </div>
         <div id="databox">
-            <div id="entryForm">
-                <table id="t1">
-                    <form action="stu-2.php" method="post">
-                        <tr>
-                            <td>
-                                <label for="CompetitionID">Competion Date:</label>
-                            </td>
-                            <td>
-                                <input type="date" name="CompetitionID" id="CompetitionID">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="CompetitionName">Competition Name:</label>
-                            </td>
-                            <td>
-                                <input type="text" name="CompetitionName" id="CompetitionName">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="ParticipationStatus">Title Won?</label>
-                            </td>
-                            <td>
-                                <input type="radio" name="ParticipationStatus" id="ParticipationStatus" value="Winner">
-                                <label for="Winner">Winner</label>
-                                <input type="radio" name="ParticipationStatus" id="ParticipationStatus"
-                                    value="Runner-Up">
-                                <label for="Loser">Runner-Up</label>
-                                <input type="radio" name="ParticipationStatus" id="ParticipationStatus"
-                                    value="Participant">
-                                <label for="Participant">Participant</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="DocumentProof">Document Proof:</label>
-                            </td>
-                            <td>
-                                <input type="file" name="DocumentProof" id="DocumentProof">
-                            </td>
-                        </tr>
-                    </form>
-                </table>
-            </div>
+            <table id="EntryTable">
+                <form action="stu-2.php" method="post">
+                    <tr>
+                        <td>
+                            <label for="CompetitionID">Competion Date:</label>
+                        </td>
+                        <td>
+                            <input type="date" name="CompetitionID" id="CompetitionID">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="CompetitionName">Competition Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="CompetitionName" id="CompetitionName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="ParticipationStatus">Title Won?</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="ParticipationStatus" id="ParticipationStatus" value="Winner">
+                            <label for="Winner">Winner</label>
+                            <input type="radio" name="ParticipationStatus" id="ParticipationStatus" value="Runner-Up">
+                            <label for="Loser">Runner-Up</label>
+                            <input type="radio" name="ParticipationStatus" id="ParticipationStatus" value="Participant">
+                            <label for="Participant">Participant</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="DocumentProof">Document Proof:</label>
+                        </td>
+                        <td>
+                            <input type="file" name="DocumentProof" id="DocumentProof">
+                        </td>
+                    </tr>
+                </form>
+            </table>
         </div>
     </div>
 </body>
