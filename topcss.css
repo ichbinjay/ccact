@@ -1,6 +1,187 @@
-#sidepane{
-    background-color:#77f7e8;    
+@import url('https://fonts.googleapis.com/css2?family=Roboto,wght@1,300&display=swap');
+
+div {
+    font-family: 'Roboto', sans-serif;
 }
-#topribbon{
+
+#mainbox {
+    border: 2px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+#topribbon {
+    height: 10%;
+    width: 100%;
+    border: 1px solid black;
     background-color: #68de88;
+}
+
+#sidepane {
+    height: 90%;
+    width: 15%;
+    float: left;
+    background-color: #77f7e8;
+}
+
+#panetable {
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#databox {
+    height: 90%;
+    width: 85%;
+    float: right;
+}
+
+#topdiv {
+    height: 40%;
+    width: 100%;
+
+}
+
+#studentData {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    float: left;
+    margin-left: 10%;
+}
+
+#bottomdiv {
+    height: 60%;
+    width: 100%;
+    background-image: linear-gradient(white, grey);
+}
+
+#dataTable {
+    height: 99%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#logout {
+    text-align: center;
+    float: right;
+    margin-top: 1.5%;
+    margin-right: 3%;
+}
+
+#mainbox {
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+#topribbon {
+    height: 10%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+#sidepane {
+    height: 90%;
+    width: 15%;
+    float: left;
+}
+
+#panetable {
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#databox {
+    height: 90%;
+    width: 85%;
+    float: right;
+}
+
+#logout {
+    text-align: center;
+    float: right;
+    margin-top: 1.5%;
+    margin-right: 3%;
+}
+
+#dataTable {
+    height: 99%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+
+div {
+    font-family: 'Roboto', sans-serif;
+}
+
+#mainbox {
+    border: 2px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+#topribbon {
+    height: 10%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+#sidepane {
+    height: 90%;
+    width: 15%;
+    float: left;
+}
+
+#panetable {
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#databox {
+    height: 90%;
+    width: 85%;
+    float: right;
+}
+
+#EntryTable {
+    border: 2px solid black;
+    width: 50%;
+    height: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    text-align: center;
+    background-color: blanchedalmond;
+}
+
+td>input[type=text],
+td>input[type=date],
+td>input[type=file] {
+    height: 25%;
+    width: 80%;
+}
+
+#logout {
+    text-align: center;
+    float: right;
+    margin-top: 1.5%;
+    margin-right: 3%;
 }
