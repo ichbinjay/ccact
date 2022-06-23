@@ -2,6 +2,8 @@
 
 <head>
     <title>Club Data</title>
+    <!--<meta http-equiv="refresh" content="2">-->
+    <link rel="stylesheet" href="topcss.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto,wght@1,300&display=swap');
 
@@ -40,7 +42,6 @@
         #data {
             margin: auto;
             margin-top: 25%;
-            background-color: red;
             text-align: center;
         }
 
@@ -102,16 +103,18 @@
         </div>
         <div id="databox">
                 <div id="data">
+                    <form action="ClubDataZero.jsp">
                     <select id="clubname" required>
                         <option value="">Club Name</option>
                         <option value="1">Coding</option>
                         <option value="2">Painting</option>
                         <option value="3">Dancing</option>
                         <option value="4">Singing</option>
-                        <option value="5">None</option>
+                        <option value="5">literary</option>
                     </select>
                     <br> <br>
                     <input type="submit" id="submit" value="Submit">
+                </form>
                 </div>
         </div>
     </div>
