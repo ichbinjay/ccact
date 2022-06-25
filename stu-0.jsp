@@ -1,47 +1,57 @@
-<%
-    
-%>
 <html>
+
 <head>
-    <!--<meta http-equiv="refresh" content="2">-->
+    <title>Club Data</title>
     <link rel="stylesheet" href="topcss.css">
-    <title>Faculty</title>
+    <style>
+        
+    </style>
 </head>
 
 <body>
     <div>
         <div id="topribbon">
-            <a href="logout.php" id="logout">Logout</a>
+            <a href="home page.html" id="logout">Logout</a>
         </div>
         <div id="sidepane">
             <table id="panetable" border="1">
                 <tr>
                     <td>
-                        <a href="fac-0.html" target="_self">Student Performance</a>
+                        <a href="stu-0.jsp" target="_self">Personal Info</a>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a href="clubdata-0.html" target="_self">Club Data</a>
+                        <a href="stu-1.jsp" target="_self">Perfomance Stats</a>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a href="compdata-0.html" target="_self">Competition Data</a>
+                        <a href="stu-2.jsp" target="_self">Update Information</a>
                     </td>
                 </tr>
             </table>
         </div>
         <div id="databox">
-            <div id="data">
-                <%@page import="java.sql.*" %>
+            <div id="topdiv">
+                <div id="studentData">
+                    Name: <br> <br>
+                    Year: <br> <br>
+                    Registration Number: <br> <br>
+                    Department:
+                </div>
+            </div>
+            <div id="bottomdiv">
+                
+                    <%@page import="java.sql.*" %>
                     <% try{ Class.forName("com.mysql.cj.jdbc.Driver"); Connection
                         con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cocurract1", "root" , "root" );
-                        Statement stmt=con.createStatement(); String rno=request.getParameter("regno"); String
-                        query="select cno, cname, stat from participated where regno=" +(String)rno; ResultSet
+                        Statement stmt=con.createStatement(); String rno=request.getParameter("regno"); 
+                        String rno1 = "1";/*change it to rno later*/
+                        String query="select cno, cname, stat from participated where regno=" +(String)rno1; ResultSet
                         rs=stmt.executeQuery(query); %>
                         <div id="dataTable">
-                            <table border="1">
+                            <table id="dataTable" border="1">
                                 <tr>
                                     <td>cno</td>
                                     <td>cname</td>
@@ -64,11 +74,8 @@
                         </div>
                         <%} catch(Exception e) { out.println(e.toString()); } %>
             </div>
-
         </div>
     </div>
 </body>
 
 </html>
-<%
-    %>

@@ -1,47 +1,48 @@
-<%
-    
-%>
 <html>
+
 <head>
+    <title>Club Data</title>
     <!--<meta http-equiv="refresh" content="2">-->
     <link rel="stylesheet" href="topcss.css">
-    <title>Faculty</title>
+
 </head>
 
 <body>
     <div>
         <div id="topribbon">
-            <a href="logout.php" id="logout">Logout</a>
+            <a href="home page.html" id="logout">Logout</a>
         </div>
         <div id="sidepane">
             <table id="panetable" border="1">
                 <tr>
                     <td>
-                        <a href="fac-0.html" target="_self">Student Performance</a>
+                        <a href="stu-0.jsp" target="_self">Personal Info</a>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a href="clubdata-0.html" target="_self">Club Data</a>
+                        <a href="stu-1.jsp" target="_self">Perfomance Stats</a>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a href="compdata-0.html" target="_self">Competition Data</a>
+                        <a href="stu-2.jsp" target="_self">Update Information</a>
                     </td>
                 </tr>
             </table>
         </div>
         <div id="databox">
-            <div id="data">
-                <%@page import="java.sql.*" %>
+                <table id="datatable" border="1">
+                                    
+                    <%@page import="java.sql.*" %>
                     <% try{ Class.forName("com.mysql.cj.jdbc.Driver"); Connection
                         con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cocurract1", "root" , "root" );
-                        Statement stmt=con.createStatement(); String rno=request.getParameter("regno"); String
-                        query="select cno, cname, stat from participated where regno=" +(String)rno; ResultSet
+                        Statement stmt=con.createStatement(); String rno=request.getParameter("regno"); 
+                        String rno1 = "1";/*change it to rno later*/
+                        String query="select cno, cname, stat from participated where regno=" +(String)rno1; ResultSet
                         rs=stmt.executeQuery(query); %>
                         <div id="dataTable">
-                            <table border="1">
+                            <table id="dataTable" border="1">
                                 <tr>
                                     <td>cno</td>
                                     <td>cname</td>
@@ -63,12 +64,10 @@
                             </table>
                         </div>
                         <%} catch(Exception e) { out.println(e.toString()); } %>
-            </div>
-
+                    
+                </table>
         </div>
     </div>
 </body>
 
 </html>
-<%
-    %>
