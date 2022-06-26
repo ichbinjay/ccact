@@ -30,7 +30,7 @@ public class LoginValidate extends HttpServlet {
                  rd1.forward(request, response);
             }
             else{
-                RequestDispatcher rd1 = request.getRequestDispatcher("fac-0.jsp");
+                RequestDispatcher rd1 = request.getRequestDispatcher("fac-0.html");
                 rd1.forward(request, response);
             }
         } else {

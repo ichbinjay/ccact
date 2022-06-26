@@ -39,16 +39,14 @@
             border-collapse: collapse;
             text-align: center;
         }
-
-        #data {
+        #data{
             height: 100%;
             width: 100%;
             border-collapse: collapse;
             text-align: center;
             margin-top: 15%;
         }
-
-        #submit {
+        #submit{
             border-radius: 2px;
             color: black;
             padding: 10px 20px;
@@ -58,8 +56,7 @@
             background-color: white;
             font-family: 'Roboto', sans-serif;
         }
-
-        select {
+        select{
             color: black;
             padding: 10px 20px;
             text-align: left;
@@ -70,20 +67,19 @@
             width: 20%;
             height: 10%;
         }
-
-        #logout {
+        #logout{
             text-align: center;
             float: right;
             margin-top: 1.5%;
             margin-right: 3%;
         }
     </style>
-</head>
+    </head>
 
 <body>
     <div>
         <div id="topribbon">
-            <a href="logout.php" id="logout">Logout</a>
+           <a href="LogoutServlet" id="logout">Logout</a>
         </div>
         <div id="sidepane">
             <table id="panetable" border="1">
@@ -105,44 +101,37 @@
             </table>
         </div>
         <div id="databox">
-            <div id="dataTable">
+            <div id="data">
+                <form action="CompDataZeroZero.jsp">
                 <%@page import="java.sql.*" %>
-                    <% try{ Class.forName("com.mysql.cj.jdbc.Driver"); 
-                    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cocurract1", "root" , "root" );
+                <%
+                String clubname=request.getParameter("clubname"); 
+                String box=request.getParameter("box"); 
+                out.println(box);
+                //create a dynamic dropdown list of club Competitions from database
+                try{
+                Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cocurract1", "root" , "root" );
                         Statement stmt=con.createStatement();
-                        String query="select s.fname, s.lname, s.regno, d.dno, st.syear from stuname s, student st, club c, dept d, competitions co where d.dno = st.dno && st.regno = s.regno && st.cid = c.cid && c.cid = co.cid && c.cname = 'innovative' && co.cname='comp1'";
+                        
+                        String query="select co.cname from competitions co, club c where c.cid=co.cid && c.cname='"+clubname+"'";
                         ResultSet rs=stmt.executeQuery(query);
-                        %> <table>
-                            <tr>
-                                <td>First Name</td>
-                                <td>Last Name</td>
-                                <td>Register Number</td>
-                                <td>Department Number</td>
-                                <td>Year</td>
-                            </tr>
-                            <% while(rs.next()) { %>
-                                <tr>
-                                    <td>
-                                        <%=rs.getString(1)%>
-                                    </td>
-                                    <td>
-                                        <%=rs.getString(2)%>
-                                    </td>
-                                    <td>
-                                        <%=rs.getInt(3)%>
-                                    </td>
-                                    <td>
-                                        <%=rs.getInt(4)%>
-                                    </td>
-                                    <td>
-                                        <%=rs.getInt(5)%>
-                                    </td>
-                                </tr>
-                                <% } %>
-                        </table>
-                        <%
+                %>  
+                    Selected Club: <input type="text" name="clubname" value="<%= clubname %>" readonly><br><br>
+                    <select id="compname" required>
+                    <option value="">Select Competition</option>
+                       <% while(rs.next()){ %>
+                        
+                        <option value="<%= rs.getString(1) %>"><%= rs.getString(1) %> </option>
+                    
+                    <% } %> 
+                    </select>
+                    <br> 
+                <%
                     } catch(Exception e) { out.println(e.toString()); } 
                     %>
+                    <br>
+                     <input type="submit" id="submit" value="Submit" />
+            </form>
             </div>
 
         </div>

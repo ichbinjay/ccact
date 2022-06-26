@@ -12,7 +12,7 @@
 <body>
     <div>
         <div id="topribbon">
-            <a href="home page.html" id="logout">Logout</a>
+            <a href="LogoutServlet" id="logout">Logout</a>
         </div>
         <div id="sidepane">
             <table id="panetable" border="1">

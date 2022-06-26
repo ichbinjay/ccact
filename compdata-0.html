@@ -79,7 +79,7 @@
 <body>
     <div>
         <div id="topribbon">
-           <a href="logout.php" id="logout">Logout</a>
+           <a href="LogoutServlet" id="logout">Logout</a>
         </div>
         <div id="sidepane">
             <table id="panetable" border="1">
@@ -103,25 +103,15 @@
         <div id="databox">
             <div id="data">
                 <form action="CompDataZero.jsp">
-                <select id="clubname" required>
-                    <option value="">Select Club</option>
-                    <option value="1">Coding</option>
-                    <option value="2">Painting</option>
-                    <option value="3">Dancing</option>
-                    <option value="4">Singing</option>
-                    <option value="5">None</option>
+                <select name="clubname" required>
+                    <option value="">Club Name</option>
+                    <option value="coding">Coding</option>
+                    <option value="painting">Painting</option>
+                    <option value="dancing">Dancing</option>
+                    <option value="singing">Singing</option>
+                    <option value="literary">literary</option>
                 </select>
-                <br> <br>
-                    <select id="compname" required>
-                        <option value="">Select Competition</option>
-                        <option value="1">Competition 1</option>
-                        <option value="2">Competition 2</option>
-                        <option value="3">Competition 3</option>
-                        <option value="4">Competition 4</option>
-                        <option value="5">Competition 5</option>
-                    </select>
-                    <br> <br>
-                <input type="submit" id="submit" value="Submit" />
+                <input type="submit" id="submit" value="Next" />
             </form>
             </div>
 

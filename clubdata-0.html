@@ -80,7 +80,7 @@
 <body>
     <div>
         <div id="topribbon">
-            <a href="home page.html" id="logout">Logout</a>
+            <a href="LogoutServlet" id="logout">Logout</a>
         </div>
         <div id="sidepane">
             <table id="panetable" border="1">
@@ -104,16 +104,15 @@
         <div id="databox">
                 <div id="data">
                     <form action="ClubDataZero.jsp">
-                    <select id="clubname" required>
+                    <select name="clubname" required>
                         <option value="">Club Name</option>
-                        <option value="1">Coding</option>
-                        <option value="2">Painting</option>
-                        <option value="3">Dancing</option>
-                        <option value="4">Singing</option>
-                        <option value="5">literary</option>
+                        <option value="coding">Coding</option>
+                        <option value="painting">Painting</option>
+                        <option value="dancing">Dancing</option>
+                        <option value="singing">Singing</option>
+                        <option value="literary">literary</option>
                     </select>
                     <br> <br>
-                    <input type="submit" id="submit" value="Submit">
                 </form>
                 </div>
         </div>

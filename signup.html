@@ -71,13 +71,14 @@
             var confirm_password = document.getElementById("confirm_password").value;
 
             var nameregex = /^[a-zA-Z]+$/;
-            var passwordregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+            var passwordregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
             if(firstname.match(nameregex) && lastname.match(nameregex)) {
                 if(password.match(passwordregex)) {
-                    if(password == confirm_password) {
+                    if(password === confirm_password) {
+                        window.location.replace('www.google.com');
                         alert("Registration Successful");
-                        return true;
+                        
                     }
                     else {
                         alert("Passwords do not match");
@@ -85,7 +86,7 @@
                     }
                 }
                 else {
-                    alert("Password must contain atleast one uppercase, one lowercase, one number and atleast 8 characters");
+                    alert("Password must contain atleast one uppercase, one lowercase, one number and atleast 6 characters");
                     return false;
                 }
             }else{

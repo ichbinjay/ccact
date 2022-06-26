@@ -1,84 +1,25 @@
 <html>
 
-    <head>
-        <title>Club Data</title>
-        <link rel="stylesheet" href="topcss.css">
-        <style>
+<head>
+    <link rel="stylesheet" href="login-css.css">
+</head>
 
-        </style>
-    </head>
-
-    <body>
-        <div>
-            <div id="topribbon">
-                <a href="home page.html" id="logout">Logout</a>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="LoginValidate">
+            <div class="user-box">
+                <input type="text" name="uname" id="uname" required>
+                <label>Username</label>
             </div>
-            <div id="sidepane">
-                <table id="panetable" border="1">
-                    <tr>
-                        <td>
-                            <a href="stu-0.jsp" target="_self">Personal Info</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="stu-1.jsp" target="_self">Perfomance Stats</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="stu-2.jsp" target="_self">Update Information</a>
-                        </td>
-                    </tr>
-                </table>
+            <div class="user-box">
+                <input type="password" name="pword" id="pword" required>
+                <label>Password</label>
             </div>
-            <div id="databox">
-                <div id="topdiv">
-                    <div id="studentData">
-                        <%@page import="java.sql.*" %>
-                        <% 
-                            try{ Class.forName("com.mysql.cj.jdbc.Driver"); Connection
-                            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cocurract1", "root" , "root" );
-                            Statement stmt=con.createStatement(); String rno=request.getParameter("regno"); 
-                            String rno1 = session.getAttribute("uname").toString();
-                            String query="select cno, cname, stat from participated where regno=" +(String)rno1; ResultSet
-                            rs=stmt.executeQuery(query);
-                          
-                        
-                       %>
-                        Name: <% out.println(rno1); %> <br> <br>
-                        Year: <br> <br>
-                        Registration Number:<br> <br>
-                        Department:
-                    </div>
-                </div>
-                <div id="bottomdiv">
-                    <div id="dataTable">
-                        <table id="dataTable" border="1">
-                            <tr>
-                                <td>cno</td>
-                                <td>cname</td>
-                                <td>status</td>
-                            </tr>
-                            <% while(rs.next()) { %>
-                            <tr>
-                                <td>
-                                    <%=rs.getInt(1)%>
-                                </td>
-                                <td>
-                                    <%=rs.getString(2)%>
-                                </td>
-                                <td>
-                                    <%=rs.getString(3)%>
-                                </td>
-                            </tr>
-                            <% } %>
-                        </table>
-                    </div>
-                    <%} catch(Exception e) { out.println(e.toString()); } %>
-                </div>
-            </div>
-        </div>
-    </body>
+                <input type="submit"> 
+                <input type="submit" onclick="signup.html" value="Sign up"> 
+        </form>
+    </div>
+</body>
 
 </html>

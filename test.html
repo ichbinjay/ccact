@@ -1,12 +1,21 @@
+<!DOCTYPE html>
 <html>
- <head>
- <title>RD</title>
- </head>
- <body>
- <form action="Login" method="post">
- Name:<input type="text" name="email"/><br/>
- Password:<input type="password" name="pass"/><br/>
-<input type="submit" value="login"/>
-</form>
- </body>
+
+<head>
+</head>
+
+<body>
+    <select name="questionid" id="questionids">
+    </select>
+    <script>
+            var questionids = ["Name", "Age", "Smoker", "Drinker", "Visit Denist"];
+//  var valuesArr = [1, 2, 3, 4, 5];       
+    $.each(questionids , function(i, e) {
+        $('#questionids').append("<option value='"+e+"'>"+e+"</option>");
+//      $('#questionids').append("<option value='"+valuesArr[i]+"'>"+e+"</option>");
+    });
+    </script>
+
+</body>
+
 </html>
